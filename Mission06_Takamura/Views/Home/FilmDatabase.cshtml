@@ -1,0 +1,63 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@model FilmInfo // I needed to add this mode to use asp-for
+
+<div class="container mt-5">
+    <h2 class="text-center">Enter Film Information</h2>
+    <form method="post" class="bg-light p-4 rounded shadow-sm">
+
+        <div class="mb-3">
+            <label asp-for="Category" class="form-label">Film Category:</label>
+            <input asp-for="Category" class="form-control" />
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Title" class="form-label">Film Title:</label>
+            <input asp-for="Title" class="form-control">
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Year" class="form-label">Published Year:</label>
+            <input asp-for="Year" class="form-control">
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Director" class="form-label">Director:</label>
+            <input asp-for="Director" class="form-control" />
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Rating" class="form-label">Rating:</label>
+            <select asp-for="Rating" class="form-select">
+                <option>G</option>
+                <option>PG</option>
+                <option>PG-13</option>
+                <option>R</option>
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Edited" class="form-label">Edited:</label>
+            <select asp-for="Edited" class="form-select">
+                <option>Yes</option>
+                <option>No</option>
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Lent" class="form-label">Lent To:</label>
+            <input asp-for="Lent" class="form-control" />
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Notes" class="form-label">Notes:</label>
+            <input asp-for="Notes" class="form-control" />
+        </div>
+
+        <button type="submit" class="btn btn-primary w-100">Add New Film</button>
+    </form>
+</div>>
