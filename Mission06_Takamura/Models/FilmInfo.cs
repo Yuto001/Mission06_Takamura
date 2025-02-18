@@ -6,20 +6,23 @@ namespace Mission06_Takamura.Models
     {
         [Key] // This is a primary key, and required.
         [Required]
-        public int FilmID { get; set; }
-        [Required]
-        public string Category { get; set; }
+        public int MovieId { get; set; }
+        
+        public int? CategoryId { get; set; }
+        public Category? Category { get; set; }
         [Required]
         public string Title { get; set; }
         [Required]
+        [MinLength(1888)]
         public int Year { get; set; }
-        [Required]
         public string Director { get; set; }
-        [Required]
+
         public string Rating { get; set; }
-        
+        [Required]
         public bool Edited { get; set; }
         public string? Lent { get; set; } // adding ? so that it's not required anymore
+        [Required]
+        public bool CopiedToPlex { get; set; }
         [Range(0,25)] // Adding the character limit
         public string? Notes { get; set; }
     }

@@ -1,5 +1,6 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Mission06_Takamura.Models;
 using SQLitePCL;
 
@@ -37,6 +38,14 @@ namespace Mission06_Takamura.Controllers
 
             return View("Confirmation", response);
         }
-     
+
+        public IActionResult MovieList()
+        {
+            // Linq
+            var films = _context.FilmInfos
+                .OrderBy(x => x.Title).ToList();
+
+            return View(films);
+        }
     }
 }
