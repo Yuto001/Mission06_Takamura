@@ -72,7 +72,7 @@ namespace Mission06_Takamura.Controllers
                 .Include(x => x.Category)
                 .Single(x => x.MovieId == id);
 
-            ViewBag.Category = _context.Categories
+            ViewBag.Categories = _context.Categories
                 .OrderBy(x => x.CategoryId)
                 .ToList();
 
