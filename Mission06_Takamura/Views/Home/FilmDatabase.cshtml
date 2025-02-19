@@ -49,8 +49,8 @@
         <div class="mb-3">
             <label asp-for="Edited" class="form-label">Edited:</label>
             <select asp-for="Edited" class="form-select">
-                <option>Yes</option>
-                <option>No</option>
+                <option value="true">Yes</option>
+                <option value="false">No</option>
             </select>
         </div>
 
@@ -61,7 +61,10 @@
 
         <div class="mb-3">
             <label asp-for="CopiedToPlex" class="form-label">Copied to Plex:</label>
-            <input asp-for="CopiedToPlex" class="form-control" />
+            <select asp-for="CopiedToPlex" class="form-control">
+                <option value="true">Yes</option>
+                <option value="false">No</option>
+            </select>
         </div>
 
         <div class="mb-3">
@@ -70,5 +73,7 @@
         </div>
 
         <button type="submit" class="btn btn-primary w-100">Add New Film</button>
+
+        <div asp-validation-summary="All"></div>
     </form>
-</div>>
+</div>
