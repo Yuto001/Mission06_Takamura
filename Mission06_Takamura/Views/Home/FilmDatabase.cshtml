@@ -9,10 +9,16 @@
 <div class="container mt-5">
     <h2 class="text-center">Enter Film Information</h2>
     <form method="post" class="bg-light p-4 rounded shadow-sm">
+        <input type="hidden" asp-for="MovieId" />
 
         <div class="mb-3">
-            <label asp-for="Category" class="form-label">Film Category:</label>
-            <input asp-for="Category" class="form-control" />
+            <select asp-for="CategoryId">
+                <option value="">Select a Major</option>
+                @foreach (Category m in ViewBag.Categories)
+                {
+                    <option value="@m.CategoryId">@m.CategoryName</option>
+                }
+            </select>
         </div>
 
         <div class="mb-3">
@@ -49,8 +55,13 @@
         </div>
 
         <div class="mb-3">
-            <label asp-for="Lent" class="form-label">Lent To:</label>
-            <input asp-for="Lent" class="form-control" />
+            <label asp-for="LentTo" class="form-label">Lent To:</label>
+            <input asp-for="LentTo" class="form-control" />
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="CopiedToPlex" class="form-label">Copied to Plex:</label>
+            <input asp-for="CopiedToPlex" class="form-control" />
         </div>
 
         <div class="mb-3">

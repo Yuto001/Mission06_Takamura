@@ -16,6 +16,7 @@
             <td>Rating</td>
             <td>Edited</td>
             <td>Lent</td>
+            <td>CopiedToPlex</td>
             <td>Notes</td>
         </tr>
     </thead>
@@ -25,13 +26,14 @@
 
         <tbody>
             <tr>
-                <td>@x.Category</td>
+                <td>@x.Category.CategoryName</td>
                 <td>@x.Title</td>
                 <td>@x.Year</td>
                 <td>@x.Director</td>
                 <td>@x.Rating</td>
                 <td>@x.Edited</td>
-                <td>@x.Lent</td>
+                <td>@x.LentTo</td>
+                <td>@x.CopiedToPlex</td>
                 <td>@x.Notes</td>
 
                 <td><a class="btn btn-info" asp-controller="Home" asp-action="Edit" asp-route-id="@x.MovieId">Edit</a></td>
