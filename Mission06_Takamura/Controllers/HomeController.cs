@@ -69,10 +69,11 @@ namespace Mission06_Takamura.Controllers
         public IActionResult Edit(int id)
         {
             FilmInfo recordToEdit = _context.Movies
+                .Include(x => x.Category)
                 .Single(x => x.MovieId == id);
 
             ViewBag.Category = _context.Categories
-                .OrderBy(x => x.CategoryName)
+                .OrderBy(x => x.CategoryId)
                 .ToList();
 
             return View("FilmDatabase", recordToEdit);

@@ -13,7 +13,7 @@
 
         <div class="mb-3">
             <select asp-for="CategoryId">
-                <option value="">Select a Major</option>
+                <option value="">Select a Category</option>
                 @foreach (Category m in ViewBag.Categories)
                 {
                     <option value="@m.CategoryId">@m.CategoryName</option>
